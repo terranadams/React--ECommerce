@@ -2,8 +2,8 @@ import React from 'react'
 import './App.css'
 import Nav from './Nav'
 import Products from './Products'
-import Details from './Details'
 import Cart from './Cart'
+import ItemDetail from './ItemDetail'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
@@ -13,9 +13,9 @@ function App() {
         <Nav />
         <Switch>
         <Route path='/' exact component={Home} />
-        <Route path='/products' component={Products}/>
-        <Route path='/details' component={Details}/>
+        <Route path='/products' exact component={Products}/>
         <Route path='/cart' component={Cart}/>
+        <Route path='/products/:id' component={ItemDetail}  />
         </Switch>
        </div>
      </Router>
