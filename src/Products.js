@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Product from './Product'
 
 function Products() {
 
@@ -20,10 +21,14 @@ function Products() {
     <div>
       <h1>Product Page</h1>
       {items.map(item => (
-         <h3 key={item.id}>{item.id}</h3>
+         <div key={item.id}>{item.title}
+         <Product src={item.img} alt={item.title}/>
+         </div>
       ))}
     </div>
   ); 
 }
+
+
 
 export default Products;
