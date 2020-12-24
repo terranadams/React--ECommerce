@@ -29,6 +29,7 @@ const itemsList = (state = [], action) => {
     }
 }
 // Immutability is what lets react-redux efficiently subscribe to fine-grained updates of your state. It also enables time-travel with redux-devtools
+// When we dispatch, we return new versions of state that replace the original. We don't mutate the pre-existing one.
 // NOT return state.push(action.payload) because it mutates state which is wrong.
 // NOT return state.itemsList.concat(action.payload) because it mutates state which is wrong.
 
