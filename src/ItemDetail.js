@@ -3,10 +3,11 @@ import './App.css';
 import { useDispatch } from 'react-redux'
 
 function ItemDetail({ match }) {
+  
   useEffect(() => {
     fetchItem()
-  }, []) // to console.log(item), add a comma and brackets right before the last parenthesis on this line.
-
+  }, []) 
+  
   const [item, setItem] = useState({})
 
   const fetchItem = async () => {
@@ -15,10 +16,10 @@ function ItemDetail({ match }) {
     const item = await fetchItem.json()
 
     setItem(item)
-    console.log(item) // We console.log item in the await/fetch function (after the data comes) otherwise it will just be an empty array.
+    console.log(item) 
   }
 
-  const addToCart = (item) => {
+  const addItem = (item) => {
     return {
       type: 'ADD_ITEM',
       payload: {
@@ -38,7 +39,7 @@ function ItemDetail({ match }) {
       <h1>{item.title}</h1>
       <img src={item.img} alt={item.title} width="300" height="300" />
       <p>{item.description}</p>
-      {/* <button onClick={dispatch(addToCart(item))}>Add to Cart</button> */}
+      <button onClick={dispatch(addItem(item))}>Add to Cart</button>
     </div>
   );
 
