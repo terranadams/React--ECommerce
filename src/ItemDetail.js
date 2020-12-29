@@ -3,11 +3,11 @@ import './App.css';
 import { useDispatch } from 'react-redux'
 
 function ItemDetail({ match }) {
-  
+
   useEffect(() => {
     fetchItem()
-  }, []) 
-  
+  }, [])
+
   const [item, setItem] = useState({})
 
   const fetchItem = async () => {
@@ -16,7 +16,7 @@ function ItemDetail({ match }) {
     const item = await fetchItem.json()
 
     setItem(item)
-    console.log(item) 
+    console.log(item)
   }
 
   const addItem = (item) => {
@@ -39,7 +39,9 @@ function ItemDetail({ match }) {
       <h1>{item.title}</h1>
       <img src={item.img} alt={item.title} width="300" height="300" />
       <p>{item.description}</p>
-      <button onClick={dispatch(addItem(item))}>Add to Cart</button>
+      <button onClick={() => {//THIS (for whatever reason) has to be an arrow function...
+        dispatch(addItem(item))
+      }}>Add to Cart</button>
     </div>
   );
 
