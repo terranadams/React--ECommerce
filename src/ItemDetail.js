@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
+
 
 function ItemDetail({ match }) {
 
@@ -36,9 +38,11 @@ function ItemDetail({ match }) {
 
   return (
     <div>
+      <Link to="/products"><button className="backButton">Go Back</button></Link>
       <h1>{item.title}</h1>
       <img src={item.img} alt={item.title} width="300" height="300" />
       <p>{item.description}</p>
+      <p>${item.price}</p>
       <button onClick={() => {//THIS (for whatever reason) has to be an arrow function...
         dispatch(addItem(item))
       }}>Add to Cart</button>
