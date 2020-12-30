@@ -25,8 +25,10 @@ function Cart() {
       <h1>Cart Page</h1>
       <ul>
         {itemsList.map(item => (
-          <div key={item.id}>{item.title}
+          <div key={item.id}>{item.title}>
+            <p></p>
             <Product src={item.img} alt={item.title} />
+            <p>${item.price}</p>
             <button onClick={dispatch}>Delete Item</button>
             <p></p>
           </div>
