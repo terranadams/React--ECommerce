@@ -4,7 +4,8 @@ import Nav from './Nav'
 import Products from './Products'
 import Cart from './Cart'
 import ItemDetail from './ItemDetail'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+
 
 function App() {
   return (
@@ -24,7 +25,15 @@ function App() {
 
 const Home = () => {
   return (
-  <h1>Home Page</h1>
+    <>
+  <h1>Welcome to my E-Commerce website!!!</h1>
+  <p>Hope you enjoy your stay :)</p>
+
+  <Link to='/products'><button>Product Page</button></Link>
+  <br></br>
+  <br></br>
+  <Link to='/cart'><button>Cart Page</button></Link>
+  </>
   )
 }
 
