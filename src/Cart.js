@@ -9,11 +9,12 @@ function Cart() {
 
   const itemsList = useSelector(state => state.itemsList)
 
-  const removeItem = (item) => {
+  const removeItem = (item, index) => {
     return {
       type: 'REMOVE_ITEM',
       payload: {
-        title: item.title
+        title: item.title,
+        index: index,
       }
     }
   }
@@ -24,12 +25,12 @@ function Cart() {
     <div>
       <h1>Cart Page</h1>
       <ul>
-        {itemsList.map(item => (
-          <div key={item.id}>{item.title}>
+        {itemsList.map((item, index) => (
+          <div key={index}>{item.title}>
             <p></p>
             <Product src={item.img} alt={item.title} className={item.category} width="200px" height="200px"/>
             <p>${item.price}</p>
-            <button onClick={dispatch}>Delete Item</button>
+            <button onClick={() => dispatch(removeItem(item, index))}>Delete Item</button>
             <p></p>
           </div>
         ))}
