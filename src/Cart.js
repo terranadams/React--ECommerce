@@ -27,7 +27,7 @@ function Cart() {
         {itemsList.map(item => (
           <div key={item.id}>{item.title}>
             <p></p>
-            <Product src={item.img} alt={item.title} />
+            <Product src={item.img} alt={item.title} className={item.category} width="200px" height="200px"/>
             <p>${item.price}</p>
             <button onClick={dispatch}>Delete Item</button>
             <p></p>
