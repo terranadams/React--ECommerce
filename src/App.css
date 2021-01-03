@@ -28,3 +28,32 @@ nav {
 .navStyle {
   color: rgb(106, 245, 222);
 }
+
+.tv {
+  width: 350px;
+  height: 200px;
+}
+.headphones {
+  width: 150px;
+  height: 200px;
+}
+.phone {
+  width: 200px;
+  height: 350px;
+}
+.action-camera {
+  width: 250px;
+  height: 200px;
+}
+.watch {
+  width: 200px;
+  height: 300px;
+}
+.refrigerator {
+  width: 200px;
+  height: 350px;
+}
+.small-appliance {
+  width: 200px;
+  height: 200px;
+}
