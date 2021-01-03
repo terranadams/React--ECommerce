@@ -45,13 +45,14 @@ function Products() {
       <br></br>
       <br></br>
       {currentItems.map(item => (
-        
+        <div key={item.id}>
           <Link to={`products/${item.id}`}>
             <strong>{item.title}</strong>
-            <Product src={item.img} alt={item.title} key={item.id} className={item.category}/>
+            <Product src={item.img} alt={item.title} className={item.category}/>
             <br></br>
             <br></br>
           </Link>
+          </div>
       ))}
     </div>
   );
