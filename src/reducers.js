@@ -25,11 +25,7 @@ const itemsList = (state = [], action) => {
         case 'ADD_ITEM':
             return [...state, action.payload]
         case 'REMOVE_ITEM':
-            return [
-                ...state.slice(0, action.payload.index),
-                ...state.slice(
-                  action.payload.index + 1, state.length
-                )]
+            return state.filter( item => item != state[action.payload.index]  )
         default:
             return state
     }
