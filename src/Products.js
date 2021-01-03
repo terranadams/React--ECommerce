@@ -42,19 +42,16 @@ function Products() {
         <option value="watch">Watch</option>
         <option value="action-camera">Action-Camera</option>
       </select>
+      <br></br>
+      <br></br>
       {currentItems.map(item => (
-        <div>
-          <br></br>
-          <br></br>
-        <div key={item.id}><div><strong>{item.title}</strong></div>
-        <br></br>
+        
           <Link to={`products/${item.id}`}>
+            <strong>{item.title}</strong>
             <Product src={item.img} alt={item.title} key={item.id} className={item.category}/>
             <br></br>
             <br></br>
           </Link>
-        </div>
-        </div>
       ))}
     </div>
   );
