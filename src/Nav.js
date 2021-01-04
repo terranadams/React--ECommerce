@@ -10,7 +10,7 @@ function Nav() {
 
   return (
     <nav>
-        <Link className='navStyle' to='/'><strong><h1>Our Logo</h1></strong></Link>
+        <Link className='navStyle' to='/'><strong><h1>HomePage</h1></strong></Link>
       <ul className="nav-links">
           <Link className='navStyle' to='/products'><li>Product Page</li></Link>
           <Link className='navStyle' to='/cart'><li>Cart Page ( {numberOfItems} items )</li></Link>

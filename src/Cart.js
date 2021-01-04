@@ -14,6 +14,7 @@ function Cart() {
       type: 'REMOVE_ITEM',
       payload: {
         title: item.title,
+        price: item.price,
         index: index,
       }
     }
