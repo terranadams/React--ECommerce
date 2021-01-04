@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 function Cart() {
 
   const itemsList = useSelector(state => state.itemsList)
+  const itemsTotalPrice = useSelector(state => state.itemsTotalPrice)
 
   const removeItem = (item, index) => {
     return {
@@ -25,6 +26,7 @@ function Cart() {
   return (
     <div>
       <h1>Cart Page</h1>
+      <strong>Total Checkout Price: ${itemsTotalPrice}</strong>
       <ul>
         {itemsList.map((item, index) => (
           <div key={index}>{item.title}>
