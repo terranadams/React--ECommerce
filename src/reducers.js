@@ -38,23 +38,18 @@ const itemsList = (state = [], action) => {
             }
         case 'REMOVE_ITEM':
             if (state.length > 1) {
-                return state.map(i => {
-                    if (i.title === action.payload.title) {
-                        if (i.quantity > 1) {
-                        i.quantity--
-                        return i
-                        } else {
-                        return state.filter(item => item !== state[action.payload.index])
-                        }
-                    } else {
-                        return i
-                    }
-            });}
-            if (state.length === 1) {
+                if (state[action.payload.index].quantity > 1) {
+                    const newState = state
+                    newState[action.payload.index].quantity--
+                    return newState
+                } else {
+                    return state.filter(item => item.title !== state[action.payload.index].title)
+                }
+            }
+            else if (state.length <= 1) {
                 if (state[0].quantity === 1) {
                     return []
-                }
-                else {
+                } else {
                     const newState = state
                     newState[0].quantity--
                     return newState
