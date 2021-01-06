@@ -17,7 +17,7 @@ function Cart() {
         <p></p>
         <Product src={item.img} alt={item.title} className={item.category} width="200px" height="200px"/>
         <p>${item.price}</p>
-        <CartActions item={item} index={index} quantity={item.quantity}/>
+        <CartActions item={item} index={index} />
         <p></p>
       </div>
     ))
