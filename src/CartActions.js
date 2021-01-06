@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-// Props: item, index, and quantity
 
 // <CartActions item={item} index={index} quantity={item.quantity}>
 const CartActions = (props) => {
 
-    const [quantity, setQuantity] = useState(props.item.quantity)
+    const [quantity, setQuantity] = useState(props.quantity)
 
     const dispatch = useDispatch()
 
@@ -38,12 +37,15 @@ const CartActions = (props) => {
     }
 
     const takeAction = (event) => {
+        console.log(quantity)
         if (event > quantity) {
             dispatch(addItem(thisItem))
             setQuantity(event)
+            console.log(quantity)
         } else if (event < quantity) {
             dispatch(removeItem(thisItem, thisIndex))
             setQuantity(event)
+            console.log(quantity)
         } else return 
     }
 
