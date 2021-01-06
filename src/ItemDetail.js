@@ -28,7 +28,8 @@ function ItemDetail({ match }) {
       payload: {
         title: item.title,
         img: item.img,
-        price: item.price
+        price: item.price,
+        quantity: 1
       }
     }
   }
