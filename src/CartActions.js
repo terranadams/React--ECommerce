@@ -51,7 +51,7 @@ const CartActions = (props) => {
 
     return (
         <>
-            <p>Quantity of Item: </p><input type='number' value={props.quantity} onChange={(e) => {
+            <p>Quantity of Item: </p><input type='number' value={quantity} onChange={(e) => {
                 takeAction(e.target.value)
             }}></input>
         </>
