@@ -26,7 +26,7 @@ function Cart() {
   return (
     <div>
       <h1>Cart Page</h1>
-      <strong>Total Checkout Price: ${itemsTotalPrice}</strong>
+      <strong>Total Checkout Price: ${itemsList.length === 0 ? "0" : itemsTotalPrice.toFixed(2)}</strong>
       <ul>
         {displayItems}
       </ul>
